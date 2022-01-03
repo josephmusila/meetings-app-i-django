@@ -1,0 +1,52 @@
+{% load static %}
+
+
+<html>
+
+<head>
+<title>Meet Ups</title>
+{% comment %} <link rel="stylesheet" href="{% static 'meetups/styles/base.css' %}"> {% endcomment %}
+<link rel="stylesheet" href="{% static 'meetups/styles/meets.css' %}"
+</head>
+<body>
+
+<body>
+    <header id="main-header">
+        <nav>
+            <a href="/meetups" id="main-logo">meet ups</a>
+        </nav>
+        <h1>
+            we got some great meet ups coming up
+        </h1>
+        <p>
+            Find the one that suits your needs
+        </p>
+    </header>
+    <main>
+        <section>
+            <h1>Upcoming meetups</h1>
+            <ol>
+                {% for meetup_item in meetups  %}
+                <li class="meet-ups">
+                        <article>
+                            <div class="meetups-summary">
+                                <div class="meetup-image">
+                                    <img src="" alt="">
+                                </div>
+                          
+                            <div class="meetup-details">
+                                <h3>{{ meetup_item.title }}</h3>
+                                <address>{{ meetup_item.location }}</address>
+                            </div>
+                        </div>
+                        <div class="meetup-actions">
+                            <a href="" class="btn">More Details</a>
+                        </div>
+                        </article>
+                </li>
+                {% endfor %}
+            </ol>
+        </section>
+    </main>
+</body>   
+</html>
