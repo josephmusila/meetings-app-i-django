@@ -1,0 +1,32 @@
+{% load static %}
+
+
+<html>
+
+<head>
+<title>{% block title %}My meetups{% endblock  %}</title>
+{% comment %} <link rel="stylesheet" href="{% static 'meetups/styles/base.css' %}"> {% endcomment %}
+<link rel="stylesheet" href="{% static 'meetups/styles/meets.css' %}">
+{% block site_css %}{% endblock  %}
+</head>
+<body>
+
+<body>
+    <header id="main-header">
+        <nav>
+            <a href="/meetups" id="main-logo">meet ups</a>
+        </nav>
+        <h1>
+            {% block main_heading %}{% endblock  %}
+        </h1>
+        <p>
+            {% block header_content %}{% endblock  %}
+        </p>
+    </header>
+    <main>
+        {% block  body %}
+        
+        {% endblock  %}
+    </main>
+</body>   
+</html>
